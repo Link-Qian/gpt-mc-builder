@@ -274,8 +274,8 @@ def create_minecraft_connection():
             print("🟢 成功连接到 Minecraft 服务器！")
             print(f"作者: {__author__}")
             print(f"版本: {__version__}")
-            mc.postToChat(作者:Link-Qian)
-            mc.postToChat(版本号:1.0.0)
+            mc.postToChat("作者:Link-Qian")
+            mc.postToChat("版本号:1.0.0")
             mc.postToChat("🤖 AI 助手已启动，输入 \\ai <指令> 使用！")
             return mc
         except Exception as e:
@@ -352,4 +352,5 @@ def main():
         time.sleep(CONFIG['system']['poll_interval'])
 
 if __name__ == "__main__":
+
     main()
