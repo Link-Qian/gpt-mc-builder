@@ -1,21 +1,22 @@
-CONFIG = {
-    "fastgpt": {
-        "url": "",
-        "api_key": "your_api_key_here",
-        "model": "",
-        "app_id": "your_app_id"
-    },
-    "minecraft": {
-        "host": "",
-        "port": 
-    },
-    "system": {
-        "command_prefix": "\\ai",
-        "poll_interval": 0.1,
-        "timeout_retry": 5,
-        "max_prompt_length": 500,
-        "max_retries": 3,           
-        "retry_delay": 2,          
-        "debounce_time": 3.0 
-    }
+{
+  "fastgpt": {
+    "url": "",
+    "api_key": "",
+    "model": "",
+    "app_id": ""
+  },
+  "minecraft": {
+    "host": "",
+    "port": 
+  },
+  "system": {
+    "command_prefix": "\\ai",
+    "poll_interval": 0.1,
+    "timeout_retry": 5,
+    "max_prompt_length": 500,
+    "max_retries": 3,
+    "retry_delay": 2,
+    "debounce_time": 3.0
+  }
 }
+
