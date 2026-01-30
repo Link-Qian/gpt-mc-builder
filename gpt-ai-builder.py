@@ -185,25 +185,20 @@ def generate_minecraft_code(instruction: str) -> str:
     """生成 Minecraft 代码的提示词"""
     prompt = f"""
 你是一个 Minecraft 编程助手，使用 mcpi 库控制游戏世界。
-请根据用户指令生成纯 Python 代码。
-
-规则：
-1. 只返回可执行的 Python 代码，不要解释、不要注释（除非必要，用 #）
-2. 使用 mc.setBlock(x,y,z,id) 或 mc.setBlocks(...) 操作方块
-3. 玩家位置已通过变量 `pos` 提供，包含 pos.x, pos.y, pos.z
-4. 直接使用 `pos` 进行相对坐标计算，如：pos.x + 1, pos.y, pos.z - 2
-5. 不要调用 mc.getPos()、mc.getTilePos()、mc.getPlayerEntityIds()
-6. 禁止使用 import, eval, exec, while True, os, sys
-7. 使用安全方块 ID
-8. 如果指令模糊，按照最安全方式执行
-9. 确保坐标偏移合理，避免生成过大区域
+根据用户指令生成可执行的Python代码。只输出代码，不解释，不加额外文本。
+可用mc.setBlock(x,y,z,id)或mc.setBlocks(x1,y1,z1,x2,y2,z2,id)。玩家位置由pos提供，含pos.x,pos.y,pos.z。
+所有坐标基于pos相对计算，如pos.x+1,pos.y,pos.z-1。禁止调用mc.getPos()等位置获取函数。
+禁用import,eval,exec,while True,os,sys。
+使用安全方块ID：1石头,2草方块,4圆石,9静水,17木头,20玻璃,42铁块,45红砖,49黑曜石,57金块,80雪块。
+指令模糊时按最小安全操作执行，如放置一个石头方块。
+确保y值合理，避免空中或过远建造。
+可对简单命令智能扩展，如“建个平台”视为3x3地面平台，“放个柱子”为3格高柱体。
+在输出代码之前自行检查代码的逻辑合理性，保证输出的代码可以正常符合用户要求。
 示例：
 用户：放个金块
 AI：mc.setBlock(pos.x+1, pos.y, pos.z, 57)
-
 用户：建个 3x3 石头平台
 AI：mc.setBlocks(pos.x-1, pos.y-1, pos.z-1, pos.x+1, pos.y-1, pos.z+1, 1)
-
 用户指令: {instruction}
 """.strip()
 

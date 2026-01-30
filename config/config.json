@@ -1,0 +1,23 @@
+{
+  "ai": {
+    "provider": "dashscope",
+    "api_key": "sk-9cd97b46fcad4a19b9c99e2ef3b74fd7",
+    "model": "qwen-plus",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+  },
+
+  "minecraft": {
+    "host": "localhost",
+    "port": 4711
+  },
+
+  "system": {
+    "command_prefix": "\\ai",
+    "poll_interval": 0.1,
+    "timeout_retry": 5,
+    "max_prompt_length": 500,
+    "max_retries": 3,
+    "retry_delay": 2,
+    "debounce_time": 3.0
+  }
+}
