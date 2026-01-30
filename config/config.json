@@ -1,9 +1,9 @@
 {
   "ai": {
-    "provider": "dashscope",
-    "api_key": "sk-9cd97b46fcad4a19b9c99e2ef3b74fd7",
-    "model": "qwen-plus",
-    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+    "provider": "Your_provider",
+    "api_key": "Your_KEY",
+    "model": "Your_model",
+    "base_url": "Your_URL"
   },
 
   "minecraft": {
